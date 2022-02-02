@@ -54,7 +54,7 @@ robot = Robot('robot',
             'touch':     TouchSensor(Port.S1), 
             'screen':    Image('_screen_'),
             'ir':        InfraredSensor(Port.S4),
-            'drivebase': DriveBase(Motor(Port.B), Motor(Port.C), 45, 110)
+            'drivebase': DriveBase(Motor(Port.B), Motor(Port.C), 314, 1800)
             }
         )
 
@@ -82,9 +82,9 @@ evq =  Eventqueue({
 # Continous event detection loop
 ncycles = 0
 
-#robot.modules['drivebase'].drive(100, 0)
+robot.modules['drivebase'].turn(360) 
 
-while robot.alive:
+while not robot.alive:
     
     # Check for events and dispatch all that have occurred
     for ee in evq.occurred_events(): 
