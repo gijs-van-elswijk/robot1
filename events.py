@@ -24,13 +24,13 @@ class Robot:
 
     def backward(self):
         if 'drivebase' in self.modules:
-            self.modules['drivebase'].straight(-100)
+            self.modules['drivebase'].straight(100)
         else:
             self.error('No drivebase')
 
     def turn(self):
         if 'drivebase' in self.modules:
-            self.modules['drivebase'].turn(45)
+            self.modules['drivebase'].turn(90)
         else:
             self.error('No drivebase')
 
